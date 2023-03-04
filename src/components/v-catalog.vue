@@ -1,9 +1,9 @@
 <template>
     <div class="v-catalog">
         <v-catalog-item
-            v-for="product in products"
+            v-for="product in PRODUCTS"
             :key="product.article"
-            v-bind:product_data="product"
+            :product_data="product"
             @sendArticle="showArticleInConsole"
         />
     </div>
@@ -11,6 +11,8 @@
 
 <script>
 import vCatalogItem from './v-catalog-item.vue';
+import { mapActions, mapGetters } from 'vuex';
+  
     export default {
         name: 'v-catalog',
         components: {
@@ -19,42 +21,26 @@ import vCatalogItem from './v-catalog-item.vue';
         props: {},
         data() {
             return {
-                products: [
-                    {
-                        "image": "1.jpg",
-                        "name": "T-shirt 1",
-                        "price": 2100.234234234,
-                        "article": "T1",
-                        "available": true,
-                        "category": "Мужские"
-                    },
-                    {
-                        "image": "1.jpg",
-                        "name": "T-shirt 2",
-                        "price": 2100.234234234,
-                        "article": "T2",
-                        "available": true,
-                        "category": "Мужские"
-                    },
-                    {
-                        "image": "1.jpg",
-                        "name": "T-shirt 3",
-                        "price": 2100.234234234,
-                        "article": "T3",
-                        "available": true,
-                        "category": "Мужские"
-                    }
-                ]
-                }
+                
+            }
         },
-        computed: {},
+        computed: {
+            ...mapGetters([
+                'PRODUCTS'
+            ]),
+        },
         methods: {
+            ...mapActions([
+                'GET_PRODUCTS_FROM_API'
+            ]),
             showArticleInConsole(data) {
                 console.log(data);
             }
         },
         watch: {},
-        mounted () {}
+        mounted () {
+            this.GET_PRODUCTS_FROM_API()
+        }
     }
 </script>
 

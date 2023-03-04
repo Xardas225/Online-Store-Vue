@@ -25,7 +25,7 @@
         methods: {},
         watch: {},
         mounted () {
-            console.log('loaded')
+            
         }
     }
 </script>

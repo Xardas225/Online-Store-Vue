@@ -1,13 +1,17 @@
 <template>
     <div class="v-catalog-item">
-        <img class="v-catalog-item__image" v-bind:src=" require(`../assets/images/${product_data.image}`) " v-bind:alt="product_data.name">
+        <img class="v-catalog-item__image" 
+            v-bind:src=" require(`../assets/images/${product_data.image}`) " 
+            v-bind:alt="product_data.name">
         <div class="v-catalog-item__name">
             {{ product_data.name }}
         </div>
         <div class="v-catalog-item__price">
             Price: {{ product_data.price }}
         </div>
-        <button class="v-catalog-item__add_to_cart_btn" @click="sendArticleToParent">add to cart</button>
+        <button 
+        class="v-catalog-item__add_to_cart_btn" 
+        @click="sendArticleToParent">add to cart</button>
     </div>
 </template>
 
