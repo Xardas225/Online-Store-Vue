@@ -1,5 +1,8 @@
 <template>
     <div class="v-catalog">
+        <router-link :to="{name:'cart'}">
+            <div class="v-catalog__to_cart">В корзину</div>
+        </router-link>
         <v-catalog-item
             v-for="product in PRODUCTS"
             :key="product.article"
@@ -26,7 +29,8 @@ import { mapActions, mapGetters } from 'vuex';
         },
         computed: {
             ...mapGetters([
-                'PRODUCTS'
+                'PRODUCTS', 
+                'CART'
             ]),
         },
         methods: {
