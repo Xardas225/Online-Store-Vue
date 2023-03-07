@@ -1,7 +1,7 @@
 <template>
-    <div class="v-main-wrapper">
-        <router-view></router-view>
-    </div>
+        <main class="v-main v-main-wrapper" style="--v-layout-left: 256px; --v-layout-right: 0px; --v-layout-top: 64px; --v-layout-bottom: 0px;">
+            <router-view></router-view>
+        </main>
 </template>
 
 <script>

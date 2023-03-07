@@ -3,13 +3,19 @@ import vCatalog from '../components/v-catalog'
 import vCart from '../components/v-cart'
 import vForMen from '../components/v-catalog-for-men'
 import vForWomen from '../components/v-catalog-for-women'
-
+import vHome from '../components/v-home'
 
 const routes = [
     {
         path: '/',
+        name: 'home', 
+        component: vHome,
+        props: true
+    },
+    {
+        path: '/catalog',
         name: 'catalog', 
-        component: vCatalog ,
+        component: vCatalog,
         props: true
     },
     {

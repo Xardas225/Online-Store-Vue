@@ -1,15 +1,21 @@
 <template>
-  <div id="app">
+  <div id="app" class="v-application-wrap">
+    <vSideBar />
+    <vToolbar/>
     <v-main-wrapper />
   </div>
 </template>
 
 <script>
 import vMainWrapper from './components/v-main-wrapper';
+import vSideBar from './components/v-sidebar.vue'
+import vToolbar from './components/v-toolbar.vue'
 
 export default {
   name: 'App',
   components: {
+    vToolbar,
+    vSideBar,
     vMainWrapper
   }
 }
