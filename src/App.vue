@@ -1,22 +1,83 @@
 <template>
-  <div id="app" class="v-application-wrap">
-    <vSideBar />
-    <vToolbar/>
-    <v-main-wrapper />
-  </div>
+  <v-app>
+    <v-navigation-drawer
+      app
+      left
+      absolute
+      temporary
+      v-model="drawer"
+    >
+      <v-card-title class="d-flex text-h6">Каталог</v-card-title>
+
+      <v-list-item 
+        class="d-flex align-start justify-start" 
+        v-for="item in menu_items" 
+        :key="item.id"
+      >
+        <v-list-item-title>
+          <router-link  class="text-black" :to="item.url">{{ item.name }}</router-link>
+        </v-list-item-title>
+      </v-list-item>
+
+    </v-navigation-drawer>
+    
+    <v-app-bar
+      app 
+      color="red"
+    >
+      <v-app-bar-nav-icon  @click="drawer = !drawer">
+        <svg-icon type="mdi" :path="mdiMenu"></svg-icon>
+      </v-app-bar-nav-icon>
+      <router-link class="text-decoration-none text-white" :to="'/'" >
+        <v-app-bar-title>
+          <h4 class="d-flex align-start text-h4">Internet Store</h4>
+        </v-app-bar-title>
+      </router-link>
+    </v-app-bar>
+
+
+    <v-main>
+      <router-view></router-view>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import vMainWrapper from './components/v-main-wrapper';
-import vSideBar from './components/v-sidebar.vue'
-import vToolbar from './components/v-toolbar.vue'
+import SvgIcon from '@jamescoyle/vue-icon';
+import { mdiMenu } from '@mdi/js';
 
 export default {
   name: 'App',
   components: {
-    vToolbar,
-    vSideBar,
-    vMainWrapper
+    SvgIcon
+  },
+  data() {
+    return {
+      mdiMenu: mdiMenu,
+      drawer: false,
+      menu_items: [
+        {
+          id: 0,
+          name: 'Одежда',
+          url: '/cloth'
+        },
+        {
+          id: 1,
+          name: 'Обувь',
+          url: '/shoes'
+        },
+        {
+          id: 2,
+          name: 'Техника',
+          url: '/tech'
+        },
+        {
+          id: 2,
+          name: 'Товары для дома',
+          url: '/for_home'
+        }
+      ]
+    }
   }
 }
 </script>
