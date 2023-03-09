@@ -22,17 +22,46 @@
     </v-navigation-drawer>
     
     <v-app-bar
-      app 
-      color="red"
+    app 
+    color="red"
     >
       <v-app-bar-nav-icon  @click="drawer = !drawer">
-        <svg-icon type="mdi" :path="mdiMenu"></svg-icon>
+        <svg-icon 
+          type="mdi" 
+          :path="mdiMenu"
+        >
+        </svg-icon>
       </v-app-bar-nav-icon>
-      <router-link class="text-decoration-none text-white" :to="'/'" >
+
+      <router-link class="text-decoration-none text-white" :to="{name: 'home'}" >
         <v-app-bar-title>
           <h4 class="d-flex align-start text-h4">Internet Store</h4>
         </v-app-bar-title>
       </router-link>
+
+      <div class="w-100 px-4 d-flex justify-end align-center">
+        <router-link :to="{name: 'cart'}">
+          <v-app-bar-nav-icon>
+            <svg-icon 
+              type="mdi" 
+              :path="mdiTrashCan" 
+              class="d-block"
+              color="white"
+            ></svg-icon>
+          </v-app-bar-nav-icon>
+        </router-link>
+        <router-link :to="{name: 'home'}">
+          <v-app-bar-nav-icon>
+            <svg-icon 
+              type="mdi" 
+              :path="mdiAccountGroup" 
+              class="d-block"
+              color="white"
+            ></svg-icon>
+          </v-app-bar-nav-icon>
+        </router-link>
+      </div>
+
     </v-app-bar>
 
 
@@ -44,7 +73,7 @@
 
 <script>
 import SvgIcon from '@jamescoyle/vue-icon';
-import { mdiMenu } from '@mdi/js';
+import { mdiMenu,mdiTrashCan,mdiAccountGroup } from '@mdi/js';
 
 export default {
   name: 'App',
@@ -54,6 +83,8 @@ export default {
   data() {
     return {
       mdiMenu: mdiMenu,
+      mdiTrashCan: mdiTrashCan,
+      mdiAccountGroup:mdiAccountGroup,
       drawer: false,
       menu_items: [
         {
@@ -92,3 +123,4 @@ export default {
   margin-top: 60px;
 }
 </style>
+

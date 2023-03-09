@@ -55,5 +55,56 @@
         "name": "Футболки",
         "image": ""
       }
-    ]
+    ],
+    "home_data": {
+      "carousel": [
+        {
+          "id": 0,
+          "image": "squirrel.jpg",
+          "belong": "cloth"
+        },
+        {
+          "id": 1,
+          "image": "squirrel.jpg",
+          "belong": "tech"
+        },
+        {
+          "id": 2,
+          "image": "squirrel.jpg",
+          "belong": "tech"
+        }
+      ],
+      "promotion": {
+        "id": 0,
+        "title": "Promotion for tech",
+        "desc": "Until the end of the week, a promotion for all tech in the store. squirrel squirrel squirrel squirrel squirrel squirrel squirrel",
+        "image": "squirrel.jpg"
+      },
+      "popular_categories": [
+        {
+          "id": 0,
+          "title": "Laptops",
+          "image": "squirrel.jpg",
+          "belong": "tech"
+        },
+        {
+          "id": 1,
+          "title": "TV",
+          "image": "squirrel.jpg",
+          "belong": "tech"
+        },
+        {
+          "id": 2,
+          "title": "Smartphones",
+          "image": "squirrel.jpg",
+          "belong": "tech"
+        },
+        {
+          "id": 3,
+          "title": "Monitors",
+          "image": "squirrel.jpg",
+          "belong": "tech"
+        }
+      ]
+    }
 }
