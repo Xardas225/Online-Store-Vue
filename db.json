@@ -1,59 +1,72 @@
 {
     "products": [
       {
-        "image": "1.jpg",
-        "name": "T-shirt 1",
-        "price": 210,
+        "image": "squirrel.jpg",
+        "title": "Ноутбук MSI 8Гб",
+        "price": "50 000",
         "article": "T1",
         "available": true,
-        "category": "Мужские"
+        "category": "laptop"
       },
       {
-        "image": "2.jpg",
-        "name": "T-shirt 2",
-        "price": 315,
-        "article": "T2",
+        "image": "squirrel.jpg",
+        "title": "Ноутбук MSI 8Гб",
+        "price": "40 000",
+        "article": "T1",
         "available": true,
-        "category": "Женские"
+        "ram": "8Гб",
+        "screen_type": "OLED",
+        "category": "laptop"
       },
       {
-        "image": "3.jpg",
-        "name": "T-shirt 3",
-        "price": 420,
-        "article": "T3",
-        "available": false,
-        "category": "Женские"
-      },
-      {
-        "image": "4.jpg",
-        "name": "T-shirt 4",
-        "price": 530,
-        "article": "T4",
+        "image": "squirrel.jpg",
+        "title": "Ноутбук MSI 8Гб",
+        "price": "80 000",
+        "article": "T1",
         "available": true,
-        "category": "Мужские"
+        "ram": "8Гб",
+        "screen_type": "OLED",
+        "category": "laptop"
       },
       {
-        "image": "5.jpg",
-        "name": "T-shirt 5",
-        "price": 650,
-        "article": "T5",
-        "available": false,
-        "category": "Женские"
-      },
-      {
-        "image": "6.jpg",
-        "name": "T-shirt 6",
-        "price": 870,
-        "article": "T6",
+        "image": "squirrel.jpg",
+        "title": "Ноутбук MSI 8Гб",
+        "price": "40 000",
+        "article": "T1",
         "available": true,
-        "category": "Женские"
-      }
-    ],
-    "for_men": [
+        "ram": "8Гб",
+        "screen_type": "OLED",
+        "category": "laptop"
+      },
       {
-        "id": 0,
-        "name": "Футболки",
-        "image": ""
+        "image": "squirrel.jpg",
+        "title": "Ноутбук MSI 16Гб",
+        "price": "110 000",
+        "article": "T1",
+        "available": true,
+        "ram": "16Гб",
+        "screen_type": "OLED",
+        "category": "laptop"
+      },
+      {
+        "image": "squirrel.jpg",
+        "title": "Ноутбук MSI 16Гб",
+        "price": "40 000",
+        "article": "T1",
+        "available": true,
+        "ram": "16Гб",
+        "screen_type": "OLED",
+        "category": "laptop"
+      },
+      {
+        "image": "squirrel.jpg",
+        "title": "Ноутбук MSI 16Гб",
+        "price": "40 000",
+        "article": "T1",
+        "available": true,
+        "ram": "16Гб",
+        "screen_type": "OLED",
+        "category": "laptop"
       }
     ],
     "home_data": {

@@ -1,21 +1,23 @@
 <template>
-    <v-card height="500">
+    <v-card height="250" class="d-flex">
         <v-img
             height="350"
             :src="require(`../assets/images/${card_item.image}`)"
             cover
         ></v-img>
         
-        <v-card-title>
-            <h3 class="text-h4">{{ card_item.title }}</h3>
-        </v-card-title>
-        
-        <v-card-text>
-            <p class="text-body-1">{{ card_item.price }}</p>
-        </v-card-text>
+        <div>
+            <v-card-title>
+                <h3 class="text-h4">{{ card_item.title }}</h3>
+            </v-card-title>
+
+            <v-card-text>
+                <p class="text-body-1">{{ card_item.desc }}</p>
+            </v-card-text>
+        </div>
 
         <v-card-text>
-            <p class="text-body-1">{{ card_item.desc }}</p>
+            <p class="text-body-1">{{ card_item.price }}</p>
         </v-card-text>
     </v-card>
 </template>

@@ -1,46 +1,41 @@
 <template>
-    <div class="v-catalog">
-        <v-list class="v-col-1" lines="one">
-            <v-list-item class="v-catalog__for_men">
-                <router-link :to="{name:'for_men'}">
-                    Мужское
-                </router-link>
-            </v-list-item>
-            <v-list-item class="v-catalog__for_women">
-                <router-link :to="{name:'for_women'}">
-                    Женское
-                </router-link>
-            </v-list-item>
-            <v-list-item class="v-catalog__to_cart">
-                <router-link :to="{name:'cart'}">
-                    Корзина
-                </router-link>
-            </v-list-item>
-        </v-list>
-        <div class="v-catalog__item__list v-row justify-center">
-            <v-catalog-item
-                v-for="product in PRODUCTS"
-                :key="product.article"
-                :product_data="product"
-                @addToCart="addToCart"
-            />
-        </div>
-    </div>
+    <v-container>
+        <v-row>
+            <v-col md="4">
+                <vFilters @applyFilters="applyFilters"></vFilters>
+            </v-col>
+            <v-col md="8">
+                <vSort @applySort="applySort"></vSort>
+                <vCardProduct
+                    v-for="card_item in modifiedProducts"
+                    :key="card_item.article"
+                    :card_item="card_item"
+                    class="mb-4"
+                >
+                </vCardProduct>    
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
 
 <script>
-import vCatalogItem from './v-catalog-item.vue';
+import vFilters from './v-filters.vue';
+import vCardProduct from './v-card-product.vue';
+import vSort from './v-sort.vue';
 import { mapActions, mapGetters } from 'vuex';
 
 export default {
     name: 'v-catalog',
     components: {
-        vCatalogItem
+        vFilters,
+        vCardProduct,
+        vSort
     },
     props: {},
     data() {
         return {
-
+            filtersProducts: [],
+            sortedProducts: ''
         }
     },
     computed: {
@@ -48,6 +43,13 @@ export default {
             'PRODUCTS', 
             'CART'
         ]),
+        modifiedProducts() {
+            if(this.filtersProducts.length > 0)
+            {
+                return this.filtersProducts;
+            }
+            return this.PRODUCTS;
+        }
     },
     methods: {
         ...mapActions([
@@ -56,6 +58,28 @@ export default {
         ]),
         addToCart(data) {
             this.ADD_TO_CART(data)
+        },
+        applyFilters(filters) {
+            this.filtersProducts = [];
+            if(!filters)
+                return;
+            this.PRODUCTS.map(product=> {
+                for(let filter in filters) {
+                    if(product[filter] !== filters[filter])
+                        return;
+                }
+                this.filtersProducts.push(product);
+            })
+        },
+        applySort() {
+            // console.log(sortData);
+            // switch(true) {
+            //     case sortData === 'По названию':
+            //         break;
+            //     case sortData === 'По цене': 
+            //         this.filtersProducts.sort((a,b)=>a.price > b.price)
+            //         break;
+            // }
         }
     },
     watch: {},

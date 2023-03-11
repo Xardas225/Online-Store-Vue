@@ -22,8 +22,9 @@
     </v-navigation-drawer>
     
     <v-app-bar
-    app 
-    color="red"
+      app 
+      color="red"
+      class="d-flex align-center"
     >
       <v-app-bar-nav-icon  @click="drawer = !drawer">
         <svg-icon 
@@ -39,12 +40,38 @@
         </v-app-bar-title>
       </router-link>
 
+      <div class="w-100">
+        <v-responsive
+          class="mx-auto d-flex"
+          max-width="344"
+          height="60"
+          width="500"
+        >
+          <v-text-field 
+            label="Поиск"
+            v-model="searchValue"
+          >
+            <i class="search-icon material-icons" @click="search(searchValue)">search</i>
+          </v-text-field>
+      </v-responsive>
+      </div>
+      
       <div class="w-100 px-4 d-flex justify-end align-center">
         <router-link :to="{name: 'cart'}">
           <v-app-bar-nav-icon>
             <svg-icon 
               type="mdi" 
               :path="mdiTrashCan" 
+              class="d-block"
+              color="white"
+            ></svg-icon>
+          </v-app-bar-nav-icon>
+        </router-link>
+        <router-link :to="{name: 'wishlist'}">
+          <v-app-bar-nav-icon>
+            <svg-icon 
+              type="mdi" 
+              :path="mdiHeartOutline" 
               class="d-block"
               color="white"
             ></svg-icon>
@@ -64,7 +91,6 @@
 
     </v-app-bar>
 
-
     <v-main>
       <router-view></router-view>
     </v-main>
@@ -73,7 +99,7 @@
 
 <script>
 import SvgIcon from '@jamescoyle/vue-icon';
-import { mdiMenu,mdiTrashCan,mdiAccountGroup } from '@mdi/js';
+import { mdiMenu,mdiTrashCan,mdiAccountGroup,mdiHeartOutline } from '@mdi/js';
 
 export default {
   name: 'App',
@@ -85,6 +111,8 @@ export default {
       mdiMenu: mdiMenu,
       mdiTrashCan: mdiTrashCan,
       mdiAccountGroup:mdiAccountGroup,
+      mdiHeartOutline: mdiHeartOutline,
+      searchValue: '',
       drawer: false,
       menu_items: [
         {
@@ -109,6 +137,11 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    search(value) {
+      console.log(value);
+    }
   }
 }
 </script>
@@ -121,6 +154,13 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 15px;
+  right: 0;
+  cursor: pointer;
 }
 </style>
 

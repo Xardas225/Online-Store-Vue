@@ -4,6 +4,7 @@ import vCart from '../components/v-cart'
 import vForMen from '../components/v-catalog-for-men'
 import vForWomen from '../components/v-catalog-for-women'
 import vHome from '../components/v-home'
+import vWishlist from '../components/v-wishlist'
 
 import vCloth from '../components/catalog/v-cloth'
 import vForHome from '../components/catalog/v-for-home'
@@ -67,6 +68,12 @@ const routes = [
         component: vTech,
         props: true
     },
+    {
+        path: '/wishlist',
+        name: 'wishlist', 
+        component: vWishlist,
+        props: true
+    }
 ]
 
 const router = new createRouter({

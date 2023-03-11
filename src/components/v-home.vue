@@ -19,7 +19,7 @@
             </v-row>
         </div>
         <div
-            class="v-home-popular-categories"
+            class="v-home-popular-categories mb-4"
             v-if="HOME_DATA.popular_categories"
         >
             <h4 class="text-h4 mb-4 text-left">Популярные категории</h4>
