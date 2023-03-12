@@ -2,7 +2,7 @@
     <v-container>
         <v-row>
             <v-col md="4">
-                <vFilters @applyFilters="applyFilters"></vFilters>
+                <vFilters @applyFilters="applyFilters" @resetFilters="resetFilters"></vFilters>
             </v-col>
             <v-col md="8">
                 <vSort @applySort="applySort"></vSort>
@@ -10,6 +10,7 @@
                     v-for="card_item in modifiedProducts"
                     :key="card_item.article"
                     :card_item="card_item"
+                    @addToCart="addToCart"
                     class="mb-4"
                 >
                 </vCardProduct>    
@@ -34,6 +35,7 @@ export default {
     props: {},
     data() {
         return {
+            filters: '',
             filtersProducts: [],
             sortedProducts: ''
         }
@@ -44,7 +46,7 @@ export default {
             'CART'
         ]),
         modifiedProducts() {
-            if(this.filtersProducts.length > 0)
+            if(this.filters)
             {
                 return this.filtersProducts;
             }
@@ -60,6 +62,7 @@ export default {
             this.ADD_TO_CART(data)
         },
         applyFilters(filters) {
+            this.filters = filters;
             this.filtersProducts = [];
             if(!filters)
                 return;
@@ -70,6 +73,12 @@ export default {
                 }
                 this.filtersProducts.push(product);
             })
+            if(filters && this.filtersProducts.length === 0)
+                this.filtersProducts = [];
+        },
+        resetFilters() {
+            this.filters = '';
+            this.filtersProducts = [];
         },
         applySort() {
             // console.log(sortData);

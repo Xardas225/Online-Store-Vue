@@ -17,12 +17,24 @@
             :items="['IPS', 'OLED', 'LED', 'SV']"
             v-model="screen_type"
         ></v-select>
+        <v-select
+            label="OS"
+            :items="['Windows', 'Linux', 'Без ОС']"
+            v-model="OS"
+        ></v-select>
         <v-btn 
             color="red" 
             variant="outlined" 
             @click="applyFilters"
         >
             Применить фильтры
+        </v-btn>
+        <v-btn 
+            class="ml-4"
+            color="red" 
+            @click="resetFilters"
+        >
+            Сбросить фильтры
         </v-btn>
     </div>
 </template>
@@ -35,7 +47,8 @@ export default {
         return {
             rating: '',
             ram: '',
-            screen_type: ''
+            screen_type: '',
+            OS: ''
         }
     },
     methods: {
@@ -46,6 +59,13 @@ export default {
                 this.$data[filter] ? filters[filter] = this.$data[filter] : false; 
             }
             this.$emit('applyFilters', filters);
+        },
+        resetFilters() {
+            for(let filter in this.$data)
+            {
+                this.$data[filter] = ''; 
+            }
+            this.$emit('resetFilters');
         }
     }
 }

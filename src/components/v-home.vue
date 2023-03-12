@@ -11,10 +11,10 @@
                     md="4"
                     v-if="HOME_DATA.promotion"
                 >
-                    <h4 class="text-h4 mb-4 text-left">Акция недели</h4>
+                    <!-- <h4 class="text-h4 mb-4 text-left">Акция недели</h4>
                     <vCardProductElement
                         :card_item="HOME_DATA.promotion"    
-                    ></vCardProductElement>
+                    ></vCardProductElement> -->
                 </v-col>
             </v-row>
         </div>
@@ -37,7 +37,7 @@
 
 <script>
 import vCarouselElement from './v-carousel-element.vue'
-import vCardProductElement from './v-card-product.vue'
+// import vCardProductElement from './v-card-product.vue'
 import vCardCategoryElement from './v-card-category.vue'
 import { mapActions, mapGetters } from 'vuex';
 
@@ -45,7 +45,7 @@ export default {
     name: 'v-home',
     components: {
         vCarouselElement,
-        vCardProductElement,
+        // vCardProductElement,
         vCardCategoryElement
     },
     data() {

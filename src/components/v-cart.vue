@@ -1,22 +1,22 @@
 <template>
-    <div class="v-cart">
+    <v-container class="v-cart">
         <h1>Cart</h1>
-        <vCartItem 
-            v-for="(item, index) in CART"
-            :key="item.article"
-            :cart_item_data="item"
+        <vCardProductElement 
+            v-for="(card_item, index) in CART"
+            :key="card_item.article"
+            :card_item="card_item"
             @deleteFromChart="deleteFromChart(index)"
-        /> 
-    </div>
+        />
+    </v-container>
 </template>
 <script>
-import vCartItem from './v-car-item.vue'
+import vCardProductElement from './v-card-product.vue'
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
     name: 'v-cart',
     components: {
-        vCartItem
+        vCardProductElement
     },
     props: {
         cart_data: {
