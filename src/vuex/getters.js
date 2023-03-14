@@ -7,6 +7,9 @@ const getters = {
     },
     HOME_DATA(state) {
         return state.home_data;
+    },
+    USERS(state) {
+        return state.users;
     }
 }
 

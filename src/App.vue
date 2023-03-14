@@ -7,8 +7,6 @@
       temporary
       v-model="drawer"
     >
-      <v-card-title class="d-flex text-h6">Каталог</v-card-title>
-
       <v-list-item 
         class="d-flex align-start justify-start" 
         v-for="item in menu_items" 
@@ -77,7 +75,7 @@
             ></svg-icon>
           </v-app-bar-nav-icon>
         </router-link>
-        <router-link :to="{name: 'home'}">
+        <router-link :to="{name: 'users'}">
           <v-app-bar-nav-icon>
             <svg-icon 
               type="mdi" 
@@ -116,24 +114,14 @@ export default {
       drawer: false,
       menu_items: [
         {
-          id: 0,
-          name: 'Одежда',
-          url: '/cloth'
-        },
-        {
-          id: 1,
-          name: 'Обувь',
-          url: '/shoes'
+          id: 2,
+          name: 'Каталог',
+          url: '/catalog'
         },
         {
           id: 2,
-          name: 'Техника',
-          url: '/tech'
-        },
-        {
-          id: 2,
-          name: 'Товары для дома',
-          url: '/for_home'
+          name: 'Корзина',
+          url: '/cart'
         }
       ]
     }

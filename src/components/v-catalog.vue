@@ -13,7 +13,7 @@
                     @addToCart="addToCart"
                     class="mb-4"
                 >
-                </vCardProduct>    
+                </vCardProduct>
             </v-col>
         </v-row>
     </v-container>

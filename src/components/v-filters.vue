@@ -4,8 +4,9 @@
             Фильтры
         </h4>
         <v-select
-            label="Рейтинг"
-            v-model="rating"
+            label="Категория"
+            :items="['Ноутбук', 'Системный блок']"
+            v-model="category"
         ></v-select>
         <v-select
             label="Объём оперативной памяти"
@@ -45,7 +46,7 @@ export default {
     components: {},
     data() {
         return {
-            rating: '',
+            category: '',
             ram: '',
             screen_type: '',
             OS: ''

@@ -10,6 +10,9 @@ const mutations = {
     },
     DELETE_FROM_CART(state, index) {
         state.cart.splice(index,1)
+    },
+    SET_USERS_TO_STATE(state, users) {
+        state.users = users;
     }
 }
 

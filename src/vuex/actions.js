@@ -27,6 +27,19 @@ const actions = {
             return error;
         })
     },
+    GET_USERS_FROM_API({commit}) {
+        return axios('http://localhost:3000/users',{
+            method: 'GET'
+        })
+        .then((data)=> {
+            commit('SET_USERS_TO_STATE', data.data)
+            return data;
+        })
+        .catch((error)=>{
+            console.log(error);
+            return error;
+        })
+    },
     ADD_TO_CART({commit}, product) {
         commit('SET_CART', product)
     },

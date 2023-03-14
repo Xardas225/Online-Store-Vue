@@ -10,7 +10,7 @@
         "screen_type": "OLED",
         "OS": "Windows",
         "diagonal": "15.6",
-        "category": "laptop"
+        "category": "Ноутбук"
       },
       {
         "image": "squirrel.jpg",
@@ -22,7 +22,7 @@
         "screen_type": "OLED",
         "OS": "Windows",
         "diagonal": "15.6",
-        "category": "laptop"
+        "category": "Ноутбук"
       },
       {
         "image": "squirrel.jpg",
@@ -34,7 +34,7 @@
         "screen_type": "OLED",
         "OS": "Windows",
         "diagonal": "17.3",
-        "category": "laptop"
+        "category": "Ноутбук"
       },
       {
         "image": "squirrel.jpg",
@@ -46,7 +46,7 @@
         "screen_type": "IPS",
         "OS": "Linux",
         "diagonal": "17.3",
-        "category": "laptop"
+        "category": "Ноутбук"
       },
       {
         "image": "squirrel.jpg",
@@ -58,7 +58,7 @@
         "screen_type": "IPS",
         "OS": "Linux",
         "diagonal": "17.3",
-        "category": "laptop"
+        "category": "Ноутбук"
       },
       {
         "image": "squirrel.jpg",
@@ -70,7 +70,7 @@
         "screen_type": "OLED",
         "OS": "Без ОС",
         "diagonal": "14",
-        "category": "laptop"
+        "category": "Ноутбук"
       },
       {
         "image": "squirrel.jpg",
@@ -82,7 +82,19 @@
         "screen_type": "SV",
         "OS": "Без ОС",
         "diagonal": "14",
-        "category": "laptop"
+        "category": "Ноутбук"
+      },
+      {
+        "image": "squirrel.jpg",
+        "title": "Системный блок",
+        "price": "40 000",
+        "article": "T8",
+        "available": true,
+        "ram": "4Гб",
+        "screen_type": "",
+        "OS": "Без ОС",
+        "diagonal": "",
+        "category": "Системный блок"
       }
     ],
     "home_data": {
@@ -95,18 +107,18 @@
         {
           "id": 1,
           "image": "squirrel.jpg",
-          "belong": "tech"
+          "belong": "catalog"
         },
         {
           "id": 2,
           "image": "squirrel.jpg",
-          "belong": "tech"
+          "belong": "catalog"
         }
       ],
       "promotion": {
         "id": 0,
-        "title": "Promotion for tech",
-        "desc": "Until the end of the week, a promotion for all tech in the store. squirrel squirrel squirrel squirrel squirrel squirrel squirrel",
+        "title": "Promotion for catalog",
+        "desc": "Until the end of the week, a promotion for all catalog in the store. squirrel squirrel squirrel squirrel squirrel squirrel squirrel",
         "image": "squirrel.jpg"
       },
       "popular_categories": [
@@ -114,26 +126,98 @@
           "id": 0,
           "title": "Laptops",
           "image": "squirrel.jpg",
-          "belong": "tech"
+          "belong": "catalog"
         },
         {
           "id": 1,
           "title": "TV",
           "image": "squirrel.jpg",
-          "belong": "tech"
+          "belong": "catalog"
         },
         {
           "id": 2,
           "title": "Smartphones",
           "image": "squirrel.jpg",
-          "belong": "tech"
+          "belong": "catalog"
         },
         {
           "id": 3,
           "title": "Monitors",
           "image": "squirrel.jpg",
-          "belong": "tech"
+          "belong": "catalog"
         }
       ]
-    }
+    },
+    "users": [
+        {
+          "id": 0,
+          "name": "Myrna Schinner",
+          "email": "reichert.milo@hotmail.com",
+          "phone": "781-873-8931",
+          "description": "Officiis maiores labore assumenda delectus. Et eligendi saepe est esse voluptas. Ut qui unde aliquam est et. Praesentium repellendus minus et repellendus minima sint recusandae."
+        },
+        {
+          "id": 1,
+          "name": "Laura Bins",
+          "email": "kulas.coralie@steuber.net",
+          "phone": "(724) 348-2180",
+          "description": "Laborum facilis et placeat et. Rerum eos laudantium assumenda aspernatur molestiae exercitationem aliquam. Et molestias sint soluta ut quis saepe omnis. Velit deleniti non consequatur ad ut."
+        },
+        {
+          "id": 2,
+          "name": "Mr. Mohamed Hermiston Jr.",
+          "email": "courtney.connelly@jacobs.biz",
+          "phone": "279.552.5614",
+          "description": "Omnis vel ut adipisci autem eveniet ad. Ea quod aperiam accusamus qui maiores. Quo quaerat cupiditate voluptatem et inventore iure molestiae."
+        },
+        {
+          "id": 3,
+          "name": "Janae Terry",
+          "email": "dickens.leta@bednar.biz",
+          "phone": "478.944.3281",
+          "description": "Et omnis dignissimos ut iusto. Ut velit aperiam est deleniti similique et enim. Ullam voluptas nisi harum id suscipit impedit quis."
+        },
+        {
+          "id": 4,
+          "name": "Janae Terry",
+          "email": "dickens.leta@bednar.biz",
+          "phone": "478.944.3281",
+          "description": "Et omnis dignissimos ut iusto. Ut velit aperiam est deleniti similique et enim. Ullam voluptas nisi harum id suscipit impedit quis."
+        },
+        {
+          "id": 5,
+          "name": "Janae Terry",
+          "email": "dickens.leta@bednar.biz",
+          "phone": "478.944.3281",
+          "description": "Et omnis dignissimos ut iusto. Ut velit aperiam est deleniti similique et enim. Ullam voluptas nisi harum id suscipit impedit quis."
+        },
+        {
+          "id": 6,
+          "name": "Janae Terry",
+          "email": "dickens.leta@bednar.biz",
+          "phone": "478.944.3281",
+          "description": "Et omnis dignissimos ut iusto. Ut velit aperiam est deleniti similique et enim. Ullam voluptas nisi harum id suscipit impedit quis."
+        },
+        {
+          "id": 7,
+          "name": "Janae Terry",
+          "email": "dickens.leta@bednar.biz",
+          "phone": "478.944.3281",
+          "description": "Et omnis dignissimos ut iusto. Ut velit aperiam est deleniti similique et enim. Ullam voluptas nisi harum id suscipit impedit quis."
+        },
+        {
+          "id": 8,
+          "name": "Janae Terry",
+          "email": "dickens.leta@bednar.biz",
+          "phone": "478.944.3281",
+          "description": "Et omnis dignissimos ut iusto. Ut velit aperiam est deleniti similique et enim. Ullam voluptas nisi harum id suscipit impedit quis."
+        },
+        {
+          "id": 9,
+          "name": "Janae Terry",
+          "email": "dickens.leta@bednar.biz",
+          "phone": "478.944.3281",
+          "description": "Et omnis dignissimos ut iusto. Ut velit aperiam est deleniti similique et enim. Ullam voluptas nisi harum id suscipit impedit quis."
+        }
+    ]
 }
