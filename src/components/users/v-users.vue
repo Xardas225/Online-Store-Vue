@@ -1,5 +1,6 @@
 <template>
     <v-container>
+        <h4 class="text-h4 mb-4">Users</h4>
         <vTable  :user_data="USERS"/>
     </v-container>
 </template>

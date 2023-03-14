@@ -31,6 +31,11 @@
                     >
                         В корзину
                     </v-btn>
+                    <v-btn 
+                        @click="addToWishlist"
+                    >
+                        В избранное
+                    </v-btn>
                 </div>
                 
             </v-col>
@@ -57,6 +62,9 @@ export default {
     methods: {
         addToCart() {
             this.$emit('addToCart', this.card_item);
+        },
+        addToWishlist() {
+            this.$emit('addToWishlist', this.card_item);
         }
     }
 }

@@ -11,6 +11,7 @@
                     :key="card_item.article"
                     :card_item="card_item"
                     @addToCart="addToCart"
+                    @addToWishlist="addToWishlist"
                     class="mb-4"
                 >
                 </vCardProduct>
@@ -21,7 +22,7 @@
 
 <script>
 import vFilters from './v-filters.vue';
-import vCardProduct from './v-card-product.vue';
+import vCardProduct from '../v-card-product.vue';
 import vSort from './v-sort.vue';
 import { mapActions, mapGetters } from 'vuex';
 
@@ -42,8 +43,7 @@ export default {
     },
     computed: {
         ...mapGetters([
-            'PRODUCTS', 
-            'CART'
+            'PRODUCTS'
         ]),
         modifiedProducts() {
             if(this.filters)
@@ -56,10 +56,14 @@ export default {
     methods: {
         ...mapActions([
             'GET_PRODUCTS_FROM_API',
-            'ADD_TO_CART'
+            'ADD_TO_CART',
+            'ADD_TO_WISHLIST'
         ]),
         addToCart(data) {
             this.ADD_TO_CART(data)
+        },
+        addToWishlist(data) {
+            this.ADD_TO_WISHLIST(data)
         },
         applyFilters(filters) {
             this.filters = filters;

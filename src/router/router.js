@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router"
-import vCatalog from '../components/v-catalog'
+import vCatalog from '../components/catalog/v-catalog'
 import vCart from '../components/v-cart'
 import vHome from '../components/v-home'
-import vWishlist from '../components/v-wishlist'
+import vWishlist from '../components/wishlist/v-wishlist'
 import vUsers from '../components/users/v-users.vue'
 
 const routes = [

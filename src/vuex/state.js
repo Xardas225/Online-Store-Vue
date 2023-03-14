@@ -2,7 +2,8 @@ const state = {
     products: [], 
     cart: [],
     home_data: [],
-    users: []
+    users: [],
+    wishlist: []
 }
 
 export default state

@@ -41,7 +41,10 @@ const actions = {
         })
     },
     ADD_TO_CART({commit}, product) {
-        commit('SET_CART', product)
+        commit('SET_TO_CART', product)
+    },
+    ADD_TO_WISHLIST({commit}, product) {
+        commit('SET_TO_WISHLIST', product)
     },
     DELETE_FROM_CART({commit}, index) {
         commit('DELETE_FROM_CART', index)
