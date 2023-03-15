@@ -9,7 +9,7 @@
                 ></v-img>
             </v-col>
         
-            <v-col md="6">
+            <v-col md="5">
                 <div>
                     <v-card-title class="text-left text-wrap">
                         <h6 class="text-h6">{{ card_item.title }}</h6>
@@ -21,7 +21,7 @@
                 </div>
             </v-col>
 
-            <v-col md="3">
+            <v-col md="4">
                 <div class="d-flex flex-column justify-center align-center">
                     <v-card-text>
                         <p class="v-card-product__price text-body-1">{{ card_item.price }} ₽</p>
@@ -35,7 +35,12 @@
                         <v-btn class="v-card-product__btn__wishlist"
                             @click="addToWishlist"
                         >
-                            В избранное
+                        <svg-icon 
+                            type="mdi" 
+                            :path="mdiHeartOutline" 
+                            class="d-block"
+                            color="black"
+                        ></svg-icon>
                         </v-btn>
                     </div>
                 </div>
@@ -47,9 +52,14 @@
 
 
 <script>
+import SvgIcon from '@jamescoyle/vue-icon';
+import { mdiHeartOutline } from '@mdi/js';
+
 export default {
     name: 'v-card-product',
-    components: {},
+    components: {
+        SvgIcon
+    },
     props: {
         card_item: {
             type: Object,
@@ -59,7 +69,9 @@ export default {
         }
     },
     data() {
-        return {}
+        return {
+            mdiHeartOutline:mdiHeartOutline
+        }
     },
     methods: {
         addToCart() {
@@ -84,13 +96,15 @@ export default {
     }
     &__btn__wrapper {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: start;
     }
     &__btn__buy {
         font-size: 10px;
         margin-bottom: 10px;
+        max-width: 100px;
+        margin-right: 5px;
     }
     &__btn__wishlist {
         

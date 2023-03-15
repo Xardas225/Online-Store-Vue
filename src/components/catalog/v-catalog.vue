@@ -15,6 +15,7 @@
                     class="mb-4"
                 >
                 </vCardProduct>
+                <v-pagination v-model="pageNumber" :length="pageCount"></v-pagination>
             </v-col>
         </v-row>
     </v-container>
@@ -38,7 +39,9 @@ export default {
         return {
             filters: '',
             filtersProducts: [],
-            sortedProducts: ''
+            sortedProducts: '',
+            productsPerPage: 5,
+            pageNumber: 1
         }
     },
     computed: {
@@ -46,11 +49,12 @@ export default {
             'PRODUCTS'
         ]),
         modifiedProducts() {
-            if(this.filters)
-            {
-                return this.filtersProducts;
-            }
-            return this.PRODUCTS;
+            let from = ((this.pageNumber - 1) * this.productsPerPage);
+            let to = from + this.productsPerPage;
+            return this.filtersProducts.slice(from, to);
+        },
+        pageCount() {
+            return Math.ceil(this.filtersProducts.length / 5) 
         }
     },
     methods: {
@@ -66,23 +70,20 @@ export default {
             this.ADD_TO_WISHLIST(data)
         },
         applyFilters(filters) {
-            this.filters = filters;
-            this.filtersProducts = [];
             if(!filters)
+            {
+                this.filtersProducts = this.PRODUCTS;
                 return;
-            this.PRODUCTS.map(product=> {
-                for(let filter in filters) {
-                    if(product[filter] !== filters[filter])
-                        return;
-                }
-                this.filtersProducts.push(product);
+            }   
+            this.filtersProducts = this.PRODUCTS.filter(product=> {
+                return Object.keys(filters).every(filter =>product[filter] === filters[filter])
             })
             if(filters && this.filtersProducts.length === 0)
                 this.filtersProducts = [];
         },
         resetFilters() {
             this.filters = '';
-            this.filtersProducts = [];
+            this.filtersProducts = this.PRODUCTS;
         },
         applySort() {
             // console.log(sortData);
@@ -97,7 +98,8 @@ export default {
     },
     watch: {},
     mounted () {
-        this.GET_PRODUCTS_FROM_API()
+        this.GET_PRODUCTS_FROM_API();
+        this.applyFilters();
     }
 }
 </script>

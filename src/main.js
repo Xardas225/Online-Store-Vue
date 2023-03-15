@@ -10,15 +10,15 @@ import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
-const vuetify = createVuetify({
-  iconfont: 'mdi',
-  components,
-  directives,
+const vuetify = createVuetify(
+{
+    iconfont: 'mdi',
+    components,
+    directives,
 })
 
 createApp(App)
-.use(vuetify)
-.use(store)
-.use(router)
+    .use(vuetify)
+    .use(store)
+    .use(router)
     .mount('#app')
-
