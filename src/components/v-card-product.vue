@@ -15,7 +15,7 @@
                         <h6 class="text-h6">{{ card_item.title }}</h6>
                     </v-card-title>
 
-                    <v-card-text class="text-wrap">
+                    <v-card-text class="text-left text-wrap">
                         <p class="text-body-1">{{ card_item.desc }}</p>
                     </v-card-text>
                 </div>
@@ -29,20 +29,26 @@
                     <div class="v-card-product__btn__wrapper">
                         <v-btn class="v-card-product__btn__buy w-100" 
                             @click="addToCart"
+                            v-if="!quantity"
                         >
                             Купить
                         </v-btn>
                         <v-btn class="v-card-product__btn__wishlist"
                             @click="addToWishlist"
                         >
-                        <svg-icon 
-                            type="mdi" 
-                            :path="mdiHeartOutline" 
-                            class="d-block"
-                            color="black"
-                        ></svg-icon>
+                            <svg-icon 
+                                type="mdi" 
+                                :path="mdiHeartOutline" 
+                                class="d-block"
+                                color="black"
+                            ></svg-icon>
                         </v-btn>
                     </div>
+                    <v-card-text class="text-left text-wrap d-flex justify-center align-center" v-if="quantity">
+                        <v-btn @click="deleteFromCart" class="mr-1">-</v-btn>
+                        <p class="text-body-1">({{ card_item.quantity }})</p>
+                        <v-btn @click="addToCart" class="ml-1">+</v-btn>
+                    </v-card-text>
                 </div>
                 
             </v-col>
@@ -73,13 +79,23 @@ export default {
             mdiHeartOutline:mdiHeartOutline
         }
     },
+    computed: {
+        quantity() {
+            return this.card_item.quantity;
+        }
+    },  
     methods: {
         addToCart() {
             this.$emit('addToCart', this.card_item);
         },
         addToWishlist() {
             this.$emit('addToWishlist', this.card_item);
+        },
+        deleteFromCart() {
+            this.$emit('deleteFromCart', this.card_item); 
         }
+    },
+    mounted() {
     }
 }
 </script>

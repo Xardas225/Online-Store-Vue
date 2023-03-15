@@ -6,10 +6,31 @@ const mutations = {
         state.home_data = data
     },
     SET_TO_CART(state, product) {
-        state.cart.push(product)
+        let isProductExists = false;
+        product.quantity++;
+        if(state.cart.length) {
+            state.cart.map(elem=>{
+                if(elem.article === product.article) {
+                    isProductExists = true;
+                }
+            })
+            if(!isProductExists) {
+                state.cart.push(product)
+            }
+        } else {
+            state.cart.push(product)
+        }
     },
-    DELETE_FROM_CART(state, index) {
-        state.cart.splice(index,1)
+    DELETE_FROM_CART(state, product) {
+        let index = state.cart.findIndex(elem => elem.article==product.article);
+        let currentProduct = state.cart[index];
+        if(currentProduct.quantity===1)
+        {
+            currentProduct.quantity--;
+            state.cart.splice(index,1)
+        }
+        else 
+            currentProduct.quantity--;
     },
     SET_USERS_TO_STATE(state, users) {
         state.users = users;

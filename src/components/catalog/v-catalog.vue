@@ -11,6 +11,7 @@
                     :key="card_item.article"
                     :card_item="card_item"
                     @addToCart="addToCart"
+                    @deleteFromCart="deleteFromCart"
                     @addToWishlist="addToWishlist"
                     class="mb-4"
                 >
@@ -49,9 +50,7 @@ export default {
             'PRODUCTS'
         ]),
         modifiedProducts() {
-            let from = ((this.pageNumber - 1) * this.productsPerPage);
-            let to = from + this.productsPerPage;
-            return this.filtersProducts.slice(from, to);
+            return this.getProducts(this.PRODUCTS);
         },
         pageCount() {
             return Math.ceil(this.filtersProducts.length / 5) 
@@ -61,25 +60,36 @@ export default {
         ...mapActions([
             'GET_PRODUCTS_FROM_API',
             'ADD_TO_CART',
-            'ADD_TO_WISHLIST'
+            'ADD_TO_WISHLIST',
+            'DELETE_FROM_CART'
         ]),
         addToCart(data) {
             this.ADD_TO_CART(data)
+        },
+        deleteFromCart(data) {
+            this.DELETE_FROM_CART(data)
         },
         addToWishlist(data) {
             this.ADD_TO_WISHLIST(data)
         },
         applyFilters(filters) {
-            if(!filters)
+            this.filters = filters;
+        },
+        getProducts(products) {
+            let from = ((this.pageNumber - 1) * this.productsPerPage);
+            let to = from + this.productsPerPage;
+            
+            if(!this.filters)
             {
-                this.filtersProducts = this.PRODUCTS;
-                return;
-            }   
-            this.filtersProducts = this.PRODUCTS.filter(product=> {
-                return Object.keys(filters).every(filter =>product[filter] === filters[filter])
-            })
-            if(filters && this.filtersProducts.length === 0)
-                this.filtersProducts = [];
+                this.filtersProducts = products;
+                return this.filtersProducts.slice(from,to);
+            }
+
+            this.filtersProducts = products.filter(product=> {
+                return Object.keys(this.filters).every(filter =>product[filter] === this.filters[filter])
+            });
+
+            return this.filtersProducts.slice(from,to);
         },
         resetFilters() {
             this.filters = '';
@@ -98,8 +108,7 @@ export default {
     },
     watch: {},
     mounted () {
-        this.GET_PRODUCTS_FROM_API();
-        this.applyFilters();
+        this.GET_PRODUCTS_FROM_API()
     }
 }
 </script>

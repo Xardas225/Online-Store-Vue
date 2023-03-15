@@ -10,7 +10,8 @@
         "screen_type": "OLED",
         "OS": "Windows",
         "diagonal": "15.6",
-        "category": "Ноутбук"
+        "category": "Ноутбук",
+        "quantity": 0
       },
       {
         "image": "squirrel.jpg",
@@ -22,7 +23,8 @@
         "screen_type": "OLED",
         "OS": "Windows",
         "diagonal": "15.6",
-        "category": "Ноутбук"
+        "category": "Ноутбук",
+        "quantity": 0
       },
       {
         "image": "squirrel.jpg",
@@ -34,7 +36,8 @@
         "screen_type": "OLED",
         "OS": "Windows",
         "diagonal": "17.3",
-        "category": "Ноутбук"
+        "category": "Ноутбук",
+        "quantity": 0
       },
       {
         "image": "squirrel.jpg",
@@ -46,7 +49,8 @@
         "screen_type": "IPS",
         "OS": "Linux",
         "diagonal": "17.3",
-        "category": "Ноутбук"
+        "category": "Ноутбук",
+        "quantity": 0
       },
       {
         "image": "squirrel.jpg",
@@ -58,7 +62,8 @@
         "screen_type": "IPS",
         "OS": "Linux",
         "diagonal": "17.3",
-        "category": "Ноутбук"
+        "category": "Ноутбук",
+        "quantity": 0
       },
       {
         "image": "squirrel.jpg",
@@ -70,7 +75,8 @@
         "screen_type": "OLED",
         "OS": "Без ОС",
         "diagonal": "14",
-        "category": "Ноутбук"
+        "category": "Ноутбук",
+        "quantity": 0
       },
       {
         "image": "squirrel.jpg",
@@ -82,7 +88,8 @@
         "screen_type": "SV",
         "OS": "Без ОС",
         "diagonal": "14",
-        "category": "Ноутбук"
+        "category": "Ноутбук",
+        "quantity": 0
       },
       {
         "image": "squirrel.jpg",
@@ -94,7 +101,8 @@
         "screen_type": "",
         "OS": "Без ОС",
         "diagonal": "",
-        "category": "Системный блок"
+        "category": "Системный блок",
+        "quantity": 0
       }
     ],
     "home_data": {
