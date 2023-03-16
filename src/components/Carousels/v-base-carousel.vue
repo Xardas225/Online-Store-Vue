@@ -8,17 +8,17 @@
         <v-carousel-item
         v-for="item in carousel_items"
         :key="item.id"
-        :src="require(`../assets/images/${item.image}`)"
+        :src="require(`@/assets/images/${item.image}`)"
         cover
         >
-        </v-carousel-item>
+    </v-carousel-item>
     </v-carousel>
 </template>
 
 <script>
 
 export default {
-    name: 'v-carousel-element',
+    name: 'v-base-carousel',
     components: {},
     props: {
         carousel_items: {

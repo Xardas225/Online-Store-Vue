@@ -1,9 +1,10 @@
-import { createRouter, createWebHistory } from "vue-router"
-import vCatalog from '../components/catalog/v-catalog'
-import vCart from '../components/v-cart'
-import vHome from '../components/v-home'
-import vWishlist from '../components/wishlist/v-wishlist'
-import vUsers from '../components/users/v-users.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import vCatalog from '@/pages/v-catalog';
+import vCart from '@/pages/v-cart';
+import vHome from '@/pages/v-home';
+import vWishlist from '@/pages/v-wishlist';
+import vUsers from '@/pages/v-users.vue';
+import vProfile from '@/pages/v-profile.vue';
 
 const routes = [
     {
@@ -34,6 +35,12 @@ const routes = [
         path: '/users',
         name: 'users', 
         component: vUsers,
+        props: true
+    },
+    {
+        path: '/profile',
+        name: 'profile', 
+        component: vProfile,
         props: true
     }
 ]

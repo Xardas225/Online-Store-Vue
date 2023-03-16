@@ -122,9 +122,6 @@ export default {
         max-width: 100px;
         margin-right: 5px;
     }
-    &__btn__wishlist {
-        
-    }
 }
 
 </style>
