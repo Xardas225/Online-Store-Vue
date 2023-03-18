@@ -40,6 +40,22 @@ const actions = {
             return error;
         })
     },
+    GET_FILTERS_FROM_API({commit}) {
+        return axios('http://localhost:3000/filters',{
+            method: 'GET'
+        })
+        .then((data)=> {
+            commit('SET_FILTERS_TO_STATE', data.data)
+            return data;
+        })
+        .catch((error)=>{
+            console.log(error);
+            return error;
+        })
+    },
+    SET_FILTERS_TO_STATE({commit}, filters) {
+        commit('SET_FILTERS_TO_STATE', filters)
+    },
     ADD_TO_CART({commit}, product) {
         commit('SET_TO_CART', product)
     },

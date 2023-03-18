@@ -1,8 +1,7 @@
 <template>
-  <v-app>
+  <v-app class="bg-grey-lighten-5">
     
     <vHeader></vHeader>
-    
     
     <v-main>
       <router-view></router-view>

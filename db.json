@@ -11,7 +11,8 @@
         "OS": "Windows",
         "diagonal": "15.6",
         "category": "Ноутбук",
-        "quantity": 0
+        "quantity": 0,
+        "core_count": "2"
       },
       {
         "image": "squirrel.jpg",
@@ -24,7 +25,8 @@
         "OS": "Windows",
         "diagonal": "15.6",
         "category": "Ноутбук",
-        "quantity": 0
+        "quantity": 0,
+        "core_count": "2"
       },
       {
         "image": "squirrel.jpg",
@@ -37,7 +39,8 @@
         "OS": "Windows",
         "diagonal": "17.3",
         "category": "Ноутбук",
-        "quantity": 0
+        "quantity": 0,
+        "core_count": "2"
       },
       {
         "image": "squirrel.jpg",
@@ -50,7 +53,8 @@
         "OS": "Linux",
         "diagonal": "17.3",
         "category": "Ноутбук",
-        "quantity": 0
+        "quantity": 0,
+        "core_count": "2"
       },
       {
         "image": "squirrel.jpg",
@@ -63,7 +67,8 @@
         "OS": "Linux",
         "diagonal": "17.3",
         "category": "Ноутбук",
-        "quantity": 0
+        "quantity": 0,
+        "core_count": "2"
       },
       {
         "image": "squirrel.jpg",
@@ -76,7 +81,8 @@
         "OS": "Без ОС",
         "diagonal": "14",
         "category": "Ноутбук",
-        "quantity": 0
+        "quantity": 0,
+        "core_count": "8"
       },
       {
         "image": "squirrel.jpg",
@@ -89,7 +95,8 @@
         "OS": "Без ОС",
         "diagonal": "14",
         "category": "Ноутбук",
-        "quantity": 0
+        "quantity": 0,
+        "core_count": "6"
       },
       {
         "image": "squirrel.jpg",
@@ -102,7 +109,8 @@
         "OS": "Без ОС",
         "diagonal": "",
         "category": "Системный блок",
-        "quantity": 0
+        "quantity": 0,
+        "core_count": "4"
       }
     ],
     "home_data": {
@@ -227,5 +235,110 @@
           "phone": "478.944.3281",
           "description": "Et omnis dignissimos ut iusto. Ut velit aperiam est deleniti similique et enim. Ullam voluptas nisi harum id suscipit impedit quis."
         }
+    ],
+    "filters": [
+      {
+        "list": {
+          "title": "Выберите категорию"
+        },
+        "data": [
+          {
+            "label": "Ноутбук",
+            "value": "Ноутбук"
+          },
+          {
+            "label": "Системный блок",
+            "value": "Системный блок"
+          }
+        ]
+      },
+      {
+        "list": {
+          "title": "Объём оперативной памяти"
+        },
+        "data": [
+          {
+            "label": "4Гб",
+            "value": "4Гб"
+          },
+          {
+            "label": "8Гб",
+            "value": "8Гб"
+          },
+          {
+            "label": "16Гб",
+            "value": "16Гб"
+          },
+          {
+            "label": "32Гб",
+            "value": "32Гб"
+          }
+        ]
+      },
+      {
+        "list": {
+          "title": "Тип экрана"
+        },
+        "data": [
+          {
+            "label": "IPS",
+            "value": "IPS"
+          },
+          {
+            "label": "OLED",
+            "value": "OLED"
+          },
+          {
+            "label": "LED",
+            "value": "LED"
+          },
+          {
+            "label": "SV",
+            "value": "SV"
+          }
+        ]
+      },
+      {
+        "list": {
+          "title": "Операционная система"
+        },
+        "data": [
+          {
+            "label": "Windows",
+            "value": "Windows"
+          },
+          {
+            "label": "Linux",
+            "value": "Linux"
+          },
+          {
+            "label": "Без ОС",
+            "value": "Без ОС"
+          }
+        ]
+      },
+      {
+        "list": {
+          "title": "Количество производительных ядер"
+        },
+        "data": [
+          {
+            "label": "2",
+            "value": "2"
+          },
+          {
+            "label": "4",
+            "value": "4"
+          },
+          {
+            "label": "6",
+            "value": "6"
+          },
+          {
+            "label": "8",
+            "value": "8"
+          }
+        ]
+      }
     ]
 }

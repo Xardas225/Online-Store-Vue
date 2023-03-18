@@ -1,8 +1,18 @@
 <template>
-  <vNavDrawer :drawer="drawer"></vNavDrawer>
-
+   <v-navigation-drawer app left absolute temporary v-model="drawer">
+      <v-list-item
+        class="d-flex align-start justify-start"
+        v-for="item in menu_items"
+        :key="item.id"
+      >
+        <v-list-item-title>
+          <router-link class="text-black" :to="item.url">{{
+            item.name
+          }}</router-link>
+        </v-list-item-title>
+      </v-list-item>
+    </v-navigation-drawer>
   <v-app-bar app color="red" class="d-flex align-center">
-    
     <v-app-bar-nav-icon @click="drawer = !drawer">
       <svg-icon type="mdi" :path="mdiMenu"> </svg-icon>
     </v-app-bar-nav-icon>
@@ -28,7 +38,7 @@
       </v-responsive>
     </div>
 
-
+   
 
     <div class="w-100 px-4 d-flex justify-end align-center">
       <router-link :to="{ name: 'cart' }">
@@ -73,8 +83,6 @@
       </router-link>
     </div>
   </v-app-bar>
-
-
 </template>
 
 <script>
@@ -84,15 +92,13 @@ import {
   mdiTrashCan,
   mdiAccountGroup,
   mdiHeartOutline,
-  mdiAccountEdit
+  mdiAccountEdit,
 } from "@mdi/js";
-import vNavDrawer from '@/layouts/v-nav-drawer.vue';
-
 
 export default {
   name: "v-header",
   components: {
-    SvgIcon,vNavDrawer
+    SvgIcon,
   },
   data() {
     return {
@@ -101,7 +107,19 @@ export default {
       mdiAccountGroup: mdiAccountGroup,
       mdiHeartOutline: mdiHeartOutline,
       mdiAccountEdit: mdiAccountEdit,
-      drawer: false
+      drawer: false,
+      menu_items: [
+        {
+          id: 2,
+          name: "Каталог",
+          url: "/catalog",
+        },
+        {
+          id: 2,
+          name: "Корзина",
+          url: "/cart",
+        },
+      ],
     };
   },
 };

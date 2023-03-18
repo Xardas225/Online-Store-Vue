@@ -38,7 +38,6 @@ export default {
     vCardProduct,
     vSort,
   },
-  props: {},
   data() {
     return {
       filters: "",
@@ -49,13 +48,13 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["PRODUCTS"]),
+    ...mapGetters(["PRODUCTS","FILTERS_DATA"]),
     modifiedProducts() {
       return this.getProducts(this.PRODUCTS);
     },
     pageCount() {
       return Math.ceil(this.filtersProducts.length / 5);
-    },
+    }
   },
   methods: {
     ...mapActions([
@@ -63,6 +62,7 @@ export default {
       "ADD_TO_CART",
       "ADD_TO_WISHLIST",
       "DELETE_FROM_CART",
+      "GET_FILTERS_FROM_API"
     ]),
     addToCart(data) {
       this.ADD_TO_CART(data);

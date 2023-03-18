@@ -37,6 +37,9 @@ const mutations = {
     },
     SET_TO_WISHLIST(state, product) {
         state.wishlist.push(product);
+    },
+    SET_FILTERS_TO_STATE(state, filters) {
+        state.filters_data = filters;
     }
 }
 

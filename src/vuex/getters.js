@@ -13,6 +13,9 @@ const getters = {
     },
     WISHLIST(state) {
         return state.wishlist;
+    },
+    FILTERS_DATA(state) {
+        return state.filters_data;
     }
 }
 

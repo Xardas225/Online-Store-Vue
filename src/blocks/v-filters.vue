@@ -1,79 +1,70 @@
 <template>
-  <div>
+  <v-card class="py-4 px-4">
     <h4 class="text-h4 text-left mb-4">Фильтры</h4>
-    <vSelect
-      :select_data="this.select_data.category"
-      v-model="category"
-    ></vSelect>
-    <vSelect :select_data="this.select_data.ram" v-model="ram"></vSelect>
-    <vSelect
-      :select_data="this.select_data.screen_type"
-      v-model="screen_type"
-    ></vSelect>
-    <vSelect 
-      :select_data="this.select_data.OS" 
-      v-model="OS"
-    ></vSelect>
+    <v-list>
+      <vFilterCheckbox
+        v-for="filters_elem in FILTERS_DATA"
+        :key="filters_elem.list.title"
+        :filters_elem="filters_elem"
+      >
+      </vFilterCheckbox>
+    </v-list>
+
     <v-btn color="red" variant="outlined" @click="applyFilters">
       Применить фильтры
     </v-btn>
     <v-btn class="ml-4" color="red" @click="resetFilters">
       Сбросить фильтры
     </v-btn>
-  </div>
+  </v-card>
 </template>
 
 <script>
-import vSelect from "@/components/FormInputs/v-base-select.vue";
+import vFilterCheckbox from '@/components/Filters/v-filter-checkbox.vue';
+import { mapActions, mapGetters } from 'vuex';
+
 
 export default {
   name: "v-filters",
   components: {
-    vSelect,
+    vFilterCheckbox
   },
   data() {
     return {
-      select_data: {
-        category: {
-          label: "Выберите категорию",
-          items: ["Ноутбук", "Системный блок"],
-        },
-        ram: {
-          label: "Объём оперативной памяти",
-          items: ["4Гб", "8Гб", "16Гб", "32Гб"],
-        },
-        screen_type: {
-          label: "Тип экрана",
-          items: ["IPS", "OLED", "LED", "SV"],
-        },
-        OS: {
-          label: "Операционная система",
-          items: ["Windows", "Linux", "Без ОС"],
-        },
-      },
-      category: "",
-      ram: "",
-      screen_type: "",
-      OS: "",
+      category    : [],
+      ram         : [],
+      screen_type : [],
+      OS          : [],
+      core_count  : []
     };
   },
+  computed: {
+    ...mapGetters(['FILTERS_DATA']),
+    filters() {
+      return this.filters_data;
+    }
+  },
   methods: {
+    ...mapActions(['GET_FILTERS_FROM_API']),
     applyFilters() {
       let filters = {};
       for (let filter in this.$data) {
-        if (filter === "select_data") continue;
+        if (filter === "data") continue;
         this.$data[filter] ? (filters[filter] = this.$data[filter]) : false;
       }
       this.$emit("applyFilters", filters);
     },
     resetFilters() {
       for (let filter in this.$data) {
-        if (filter === "select_data") continue;
+        if (filter === "data") continue;
         this.$data[filter] = "";
       }
       this.$emit("resetFilters");
     },
   },
+  mounted() {
+    this.GET_FILTERS_FROM_API();
+  }
 };
 </script>
 
